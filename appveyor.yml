@@ -1,4 +1,4 @@
-os: Visual Studio 2015
+os: Visual Studio 2019
 
 platform:
   - x86
@@ -11,14 +11,21 @@ environment:
 skip_branch_with_pr: true
 
 install:
-  - set PATH=C:\Python35;C:\Python35\Scripts;%PATH%
+  - set PATH=C:\Python311;C:\Python311\Scripts;%PATH%
   - python -m pip install meson ninja
 
-  - call "%VS140COMNTOOLS%\..\..\VC\vcvarsall.bat" %ARCH%
+  - call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat" %ARCH%
 
 build_script:
-  - meson -Ddocs=false --backend=ninja build
+  - meson -Ddocs=false --backend=ninja --default-library=both build
   - ninja -C build
 
 test_script:
   - ninja -C build test
+
+artifacts:
+  - path: '**\*.dll'
+  
+  - path: '**\*.lib'
+  
+  - path: '**\*.a'
