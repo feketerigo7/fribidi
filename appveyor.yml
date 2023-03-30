@@ -32,4 +32,4 @@ artifacts:
   
   - path: 'build\lib\fribidi-config.h'
   
-  - path: **\fribidi-unicode-version.h'
+  - path: '**\fribidi-unicode-version.h'
