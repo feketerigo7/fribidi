@@ -31,3 +31,5 @@ artifacts:
   - path: '**\*.a'
   
   - path: 'build\lib\fribidi-config.h'
+  
+  - path: **\fribidi-unicode-version.h'
