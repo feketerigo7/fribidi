@@ -29,3 +29,5 @@ artifacts:
   - path: '**\*.lib'
   
   - path: '**\*.a'
+  
+  - path: 'build\lib\fribidi-config.h'
